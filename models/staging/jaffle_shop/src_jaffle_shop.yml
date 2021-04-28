@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: Clone of the jaffle_shop db.
+    database: dbt-tutorial
+    tables:
+      - name: customers
+        description: jaffle_shop Customer data.
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+      - name: orders
+        description: jaffle-shop Order data.
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null

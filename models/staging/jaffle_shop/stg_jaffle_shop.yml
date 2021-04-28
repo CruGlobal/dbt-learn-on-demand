@@ -2,14 +2,18 @@ version: 2
 
 models:
   - name: stg_customers
+    description: Customer data from jaffle_shop source.
     columns:
       - name: customer_id
+        description: Primary key for stg_customers model.
         tests:
           - unique
           - not_null
   - name: stg_orders
+    description: Orders data from jaffle_shop source.
     columns:
       - name: status
+        description: Primary key for stg_orders model. {{doc('order_status')}}
         tests:
           - accepted_values:
               values:

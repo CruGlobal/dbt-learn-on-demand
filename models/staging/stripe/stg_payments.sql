@@ -5,8 +5,9 @@ with payments as (
         paymentmethod,
         status,
         amount,
-        created
-        from dbt-tutorial.stripe.payment
+        created,
+        _batched_at
+        from {{source('stripe','payment') }}
 )
 
 select * from payments
