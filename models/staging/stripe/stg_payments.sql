@@ -4,7 +4,7 @@ with payments as (
         orderid as order_id,
         paymentmethod,
         status,
-        amount,
+        {{cents_to_dollars('amount')}} as amount,
         created,
         _batched_at
         from {{source('stripe','payment') }}
